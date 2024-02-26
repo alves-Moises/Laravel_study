@@ -22,11 +22,9 @@ Route::get('/', function () {
 // resource
 // Route::get('/sobrenos', [Controller::class, 'teste']);
 
-Route::get('/sobrenos', function(){
-    return 'oi';
-});
+Route::get('/sobrenos', [Controller::class,'teste']);
+Route::get('/sucesso', [Controller::class,'testesucesso']);
 
-Route::any('/salvar', [Controller::class, 'salvar']);
-
-
-
+//Route::get('/user/{id}', [Controller:class, 'usuario]);
+Route::get('/user/{id?}', [Controller::class,'usuario']);
+// Route::fallback([Controller::class, 'pagina404']);
