@@ -6,6 +6,9 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Http\Request;
+
+
 
 class Controller extends BaseController
 {
@@ -13,7 +16,7 @@ class Controller extends BaseController
 
     public function teste(Request $request)
     {
-        return redirect('sucesso');
+        return redirect()->route('sucesso');
     }
 
     public function testesucesso(Request $request)
@@ -23,12 +26,11 @@ class Controller extends BaseController
 
     public function usuario(Request $request)
     {
-        echo $request->id;
-        // if(isset($request->id)){
-        //     return "Esse é o usuário ".$request->id;
-        // }else{
-        //     return "Trata-se de um novo usuario";
-        // }
+        if(isset($request->id)){
+            return "Esse é o usuário ".$request->id;
+        }else{
+            return "Trata-se de um novo usuario";
+        }
     }
 
     public function pagina404(Request $request)
