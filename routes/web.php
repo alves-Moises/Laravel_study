@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\TesteController;
+use App\Http\Controllers\TodoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,7 +42,9 @@ Route::prefix('dashboard')
 
 Route::get('/teste', TesteController::class);
 
+Route::get('/dados', [TodoController::class, 'dados']);
+
+Route::get('/relacionamento',[TodoController::class, 'pegarRelacionamento']);
 
 Route::resource('/fotos', NovoController::class);
-
 Route::fallback([Controller::class, 'pagina404']);
