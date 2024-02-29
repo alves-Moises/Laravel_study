@@ -37,4 +37,9 @@ class Controller extends BaseController
     {
         return 'Essa página não foi encontrada';
     }
+
+    public function pesquisa(Request $request)
+    {
+        return view('pesquisa');
+    }
 }
