@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\TesteController;
 use App\Http\Controllers\TodoController;
+use App\Http\Controllers\NovoController;
+use App\Http\Controllers\NomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,3 +50,7 @@ Route::get('/relacionamento',[TodoController::class, 'pegarRelacionamento']);
 
 Route::resource('/fotos', NovoController::class);
 Route::fallback([Controller::class, 'pagina404']);
+
+
+Route::get('/pesquisa',[Controller::class, 'pesquisa']);
+Route::post('/pesquisa', [NomeController::class, 'pesquisa']);
