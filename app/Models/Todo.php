@@ -9,12 +9,13 @@ class Todo extends Model
 {
     use HasFactory;
 
+    
     // protected $tabel = 'todos2';
-    //protectecd $primaryKey = 'todosId';
+    // protectecd $primaryKey = 'todosId';
     // public $timestamps = false;
-    // protetecd $guarded = [];
-    // protected $fillabe = [
-    //     'nome', 
-    //     'votos'
-    // ];
+    // protected  $guarded = [];
+    protected $fillabe = [
+        'nome', 
+        'votos'
+    ];
 }
