@@ -36,4 +36,18 @@ class TodoController extends Controller
         
         dd($query);
     }
+
+    public function inserir(Request $request)
+    {
+        $store = todo::create([
+            'nome'=>'Mariana',
+            'votos'=>9,
+            'user_id'=>2
+        ]);
+        if($store){
+            echo "Dados inseridos com sucesso! O ome ".$store.name." foi cadastrado."; 
+        }else{
+            echo "Houve uma faila! Tente novamente.";
+        }
+    }
 }
