@@ -14,8 +14,9 @@ class ExampleTest extends TestCase
      */
     public function test_the_application_returns_a_successful_response()
     {
-        $response = $this->get('/');
-
+        $response = $this->get('/api/v1/get-user');
+        dd($response);
         $response->assertStatus(200);
+        
     }
 }
