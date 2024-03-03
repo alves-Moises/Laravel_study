@@ -21,7 +21,7 @@ class NomeController extends Controller
 
             })
             ->get();
-
-        dd($nomes);
+                        
+            dd($nomes);
     }
 }
