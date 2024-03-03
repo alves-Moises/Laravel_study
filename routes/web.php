@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
+
 use App\Http\Controllers\TesteController;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\NovoController;
@@ -31,6 +32,7 @@ Route::get('/', function () {
 // Route::get('/user/{id}', [Controller::class, 'usuario']);
 Route::get('/user/{id?}', [Controller::class, 'usuario']);
 
+
 Route::prefix('dashboard')
     ->middleware('auth')
     ->controller(Controller::class)
@@ -52,5 +54,7 @@ Route::resource('/fotos', NovoController::class);
 Route::fallback([Controller::class, 'pagina404']);
 
 
-Route::get('/pesquisa',[Controller::class, 'pesquisa']);
+Route::get('/pesquisa', [Controller::class, 'pesquisa']);
 Route::post('/pesquisa', [NomeController::class, 'pesquisa']);
+
+Route::post('/inserir', [TodoController::class, 'inserir'])->name('inserir');
