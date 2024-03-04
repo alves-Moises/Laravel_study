@@ -6,6 +6,8 @@ use App\Models\Todo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+
+
 class TodoController extends Controller
 {
     public function dados(Request $request)
@@ -39,15 +41,46 @@ class TodoController extends Controller
 
     public function inserir(Request $request)
     {
-        $store = todo::create([
+        $store  = Todo::create([
             'nome'=>'Mariana',
-            'votos'=>9,
-            'user_id'=>2
+            'votos'=>5,
+            'user_id'=>1
         ]);
+
         if($store){
-            echo "Dados inseridos com sucesso! O ome ".$store.name." foi cadastrado."; 
+            echo "Daddos foram inseridos com sucesso! O nome ".$store->nome." foi cadastrado ";
         }else{
-            echo "Houve uma faila! Tente novamente.";
+            echo "Houve uma falha. tente novamente";
         }
     }
+
+
+    public function update(Request $request)
+    {
+
+        // $update = Todo::where('id','=','10')
+        //     ->update([
+        //         'nome'=>'Robson'
+        //     ]);
+
+        $update = Todo::where('nome', '=', 'Thiago')
+            ->where('votos','=','7')
+            ->update([
+                'nome'=>'Thas Coelho',
+                'votos'=>13
+            ]);
+        
+        if($update){
+            echo "sucesso";
+        }else{
+            echo "Houve uma falha";
+        }
+    }
+
+    public function delete(Request $request)
+    {
+        Todo::where('id', '=', $request->id)->delete();
+    }
 }
+
+
