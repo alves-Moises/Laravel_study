@@ -7,6 +7,9 @@ use App\Http\Controllers\TesteController;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\NovoController;
 use App\Http\Controllers\NomeController;
+use App\Http\Controllers\PedidoController;
+use app\Http\Controllers\PedidoItemsControoller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,4 +60,10 @@ Route::fallback([Controller::class, 'pagina404']);
 Route::get('/pesquisa', [Controller::class, 'pesquisa']);
 Route::post('/pesquisa', [NomeController::class, 'pesquisa']);
 
-Route::post('/inserir', [TodoController::class, 'inserir'])->name('inserir');
+Route::get('/inserir', [TodoController::class, 'inserir'])->name('inserir');
+
+Route::get('/update', [TodoController::class, 'update'])->name('update');
+
+Route::get('/delete/{id}', [TodoController::class, 'delete'])->name('delete');
+
+Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos.index');
