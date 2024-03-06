@@ -9,6 +9,7 @@ use App\Http\Controllers\NovoController;
 use App\Http\Controllers\NomeController;
 use App\Http\Controllers\PedidoController;
 use app\Http\Controllers\PedidoItemsControoller;
+use App\Http\Controllers\FilmeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,3 +68,6 @@ Route::get('/update', [TodoController::class, 'update'])->name('update');
 Route::get('/delete/{id}', [TodoController::class, 'delete'])->name('delete');
 
 Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos.index');
+
+Route::resource('/filmes', FilmeController::class);
+
