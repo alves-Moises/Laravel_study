@@ -17,7 +17,7 @@ class FilmeController extends Controller
         return view('filmes');
     }
 
-   
+
     /**
      * Store a newly created resource in storage.
      *
