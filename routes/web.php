@@ -22,9 +22,9 @@ use App\Http\Controllers\FilmeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // match, any
 // resource
@@ -70,4 +70,6 @@ Route::get('/delete/{id}', [TodoController::class, 'delete'])->name('delete');
 Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos.index');
 
 Route::resource('/filmes', FilmeController::class);
+
+Route::get('/', [TodoController::class, 'index'])->name('todo.index');
 
