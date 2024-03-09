@@ -81,6 +81,12 @@ class TodoController extends Controller
     {
         Todo::where('id', '=', $request->id)->delete();
     }
+
+    //retona primeira view
+    public function index()
+    {
+        return view('carros.index');
+    }
 }
 
 
