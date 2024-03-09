@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Todo;
+use Doctrine\DBAL\Schema\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -85,8 +86,11 @@ class TodoController extends Controller
     //retona primeira view
     public function index()
     {
-        return view('carros.index');
+
+        $data = Todo::orderby('nome')->get();
+        return view('carros', compact('data'));
     }
 }
+
 
 
