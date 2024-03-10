@@ -1,4 +1,12 @@
-<x-box cor="darkgreen" fonte="white">
-    <x-slot:title>Sucesso</x-slot>
-    <x-slot:msg>Você efetuou a insercacao com sucesso </x-slot>
-</x-box>
+@extends('layouts.app')
+
+@section('title', 'Minha Primeira Página')
+
+@section ('div-alert')
+    @parent 
+    Sucesso <br>
+    CVc~e efetuou a inserção com sucesso!
+
+    
+
+@endsection
