@@ -8,8 +8,9 @@ use App\Http\Controllers\TodoController;
 use App\Http\Controllers\NovoController;
 use App\Http\Controllers\NomeController;
 use App\Http\Controllers\PedidoController;
-use app\Http\Controllers\PedidoItemsControoller;
+use App\Http\Controllers\PedidoItemsControoller;
 use App\Http\Controllers\FilmeController;
+use App\Http\Controllers\FormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,4 +74,5 @@ Route::resource('/filmes', FilmeController::class);
 
 Route::get('/', [TodoController::class, 'index'])->name('todo.index');
 
-
+Route::get('/formulario', [FormController::class, 'index'])->name('formulario.index');
+Route::put('/formulario/store', [FormController::class, 'store'])->name('formulario.store');
