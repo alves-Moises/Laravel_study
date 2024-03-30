@@ -75,4 +75,4 @@ Route::resource('/filmes', FilmeController::class);
 Route::get('/', [TodoController::class, 'index'])->name('todo.index');
 
 Route::get('/formulario', [FormController::class, 'index'])->name('formulario.index');
-Route::put('/formulario/store', [FormController::class, 'store'])->name('formulario.store');
+Route::put('/formulario/store/{idade}', [FormController::class, 'store'])->name('formulario.store');
