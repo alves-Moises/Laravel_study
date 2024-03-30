@@ -19,9 +19,27 @@ class FormController extends Controller
 
     
     
-    public function store(Request $request)
+    public function store(Request $request, int $idade)
     {
-        echo 'oi';
+        //echo $idade;
+        echo 'O seu nome é '.$request->nome.' e a sua idade é '.$idade;
+        //dd($request);
+        //echo $request->method();
+        //echo $request->getRequestUri();
+        //echo $request->fullUrl();
+        //dd($request->all());
+        //echo $request->string('nome');
+        /*if($request->has('cidade')){
+            echo 'sim';
+        }else{
+            echo 'não';
+        }*/
+
+        if($request->has('nome') && !empty($request->nome)){
+            echo 'sim';
+        }else{
+            echo 'não';
+        }
     }
 
     
