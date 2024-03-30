@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Formulario</h1>
-    <form name="form" action="/formulario/store" method="post">
+    <form name="form" action="/formulario/store/15" method="post">
         @csrf
         @method('PUT')
         <input type="text" name="nome" id="nome" placeholder="DIgite seu nome:">
