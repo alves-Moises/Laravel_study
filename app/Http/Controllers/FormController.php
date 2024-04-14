@@ -21,8 +21,9 @@ class FormController extends Controller
     
     public function store(Request $request, int $idade)
     {
+        dd($request->method());
         //echo $idade;
-        echo 'O seu nome é '.$request->nome.' e a sua idade é '.$idade;
+        // echo 'O seu nome é '.$request->nome.' e a sua idade é '.$idade;
         //dd($request);
         //echo $request->method();
         //echo $request->getRequestUri();
