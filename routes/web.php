@@ -11,6 +11,9 @@ use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\PedidoItemsControoller;
 use App\Http\Controllers\FilmeController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\ExemploController;
+use App\Http\Controllers\CursoController;
+use App\Http\Controllers\FormExercicioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,7 +75,21 @@ Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos.index'
 
 Route::resource('/filmes', FilmeController::class);
 
-Route::get('/', [TodoController::class, 'index'])->name('todo.index');
+// Route::get('/', [TodoController::class, 'index'])->name('todo.index');
 
 Route::get('/formulario', [FormController::class, 'index'])->name('formulario.index');
 Route::put('/formulario/store/{idade}', [FormController::class, 'store'])->name('formulario.store');
+
+
+Route::prefix('curso')
+    ->controller(CursoController::class)
+    ->group(function(){
+        Route::get('/laravel', 'bemVindo');
+    });
+
+Route::get("/form-exercicio", [FormExercicioController::class, 'formulario']);
+
+Route::patch("/form-exercicio/store", [FormExercicioController::class, 'store']);
+
+Route::get('/', [TodoController::class, 'index']);
+Route::post('/processa', [TodoController::class, 'processa'])->name('todo.processo');
