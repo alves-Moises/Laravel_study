@@ -26,6 +26,7 @@ Route::get('/v1/get-user', function() {
 });
 
 
+
 // Route::get('/teste', TesteController::class);
 
 // Route::get('/dados', [TodoController::class, 'dados']);
